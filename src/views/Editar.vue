@@ -75,7 +75,7 @@
         </v-col>
         <v-col cols="12" sm="6" md="4">
            <v-select
-           v-model="usuario.country"
+           v-model="usuario.pais"
             :items="country"
             item-text="name"
             item-value="name"
@@ -126,6 +126,7 @@
 
 <script>
 import {mapActions, mapState} from 'vuex'
+import axios from 'axios'
 export default {
     name: 'Editar',
     data() {
@@ -138,6 +139,7 @@ export default {
         numero: '',
         colonia: '',
         ciudad: '',
+        pais: '',
         country: [{name: ''}],
         postal: '',
         Rules: [ v => !!v || 'Este campo es requerido'],
@@ -149,7 +151,8 @@ export default {
       }
     },
     created() {
-      this.getUsuario(this.id)
+      this.getUsuario(this.id),
+      this.p()
     },
     methods: {
       ...mapActions(['getUsuario', 'editarUsuario']),
@@ -159,7 +162,7 @@ export default {
           //console.log(datos.data.data[0].name)
           .then(res => {
             this.country = res.data.data
-            console.log(res.data.data)
+           // console.log(res.data.data)
           })
           .catch(error => {
             console.log(error);
@@ -168,9 +171,6 @@ export default {
     },
     computed:{
       ...mapState(['usuario'])
-    },
-    created(){
-      this.p()
     }
 }
 </script>

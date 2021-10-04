@@ -154,7 +154,7 @@ import axios from 'axios'
           //console.log(datos.data.data[0].name)
           .then(res => {
             this.country = res.data.data
-            console.log(res.data.data)
+           // console.log(res.data.data)
           })
           .catch(error => {
             console.log(error);

@@ -56,7 +56,7 @@ export default new Vuex.Store({
         paterno: usuario.paterno, 
         materno: usuario.materno,
         calle: usuario.calle, numero: usuario.numero, colonia: usuario.colonia,
-        ciudad: usuario.ciudad, pais: usuario.country, postal: usuario.postal,
+        ciudad: usuario.ciudad, pais: usuario.pais, postal: usuario.postal,
         correo: usuario.correo, telefono: usuario.telefono
       })
       .then(() =>{
